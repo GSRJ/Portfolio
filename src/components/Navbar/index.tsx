@@ -1,19 +1,19 @@
+import { userData } from "@/utils/userData";
 import { useState } from "react";
 import useMedia from "use-media";
-import { userData } from "@/utils/userData";
 
 import {
-  Navbar as NavbarWrapper,
   LogoTipo,
   LogoTipoText,
   NavbarLinks,
   NavbarMobileArea,
+  Navbar as NavbarWrapper,
 } from "./style";
 
-import { FaBars } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
 import { Button } from "@/styles/Buttons";
 import { Container, Flex } from "@/styles/Global";
+import { FaBars } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 export interface MenuButtonOpen {
   open: Boolean;
@@ -21,7 +21,6 @@ export interface MenuButtonOpen {
 }
 
 export const NavBar = (): JSX.Element => {
-
   const isWide = useMedia({ maxWidth: "991px" });
 
   document.title = userData.nameUser;
@@ -49,9 +48,7 @@ export const NavBar = (): JSX.Element => {
             </Button>
           )}
         </NavbarMobileArea>
-        <Flex>
-          {isWide ? open && <NavLinks /> : <NavLinks />}
-        </Flex>
+        <Flex>{isWide ? open && <NavLinks /> : <NavLinks />}</Flex>
       </Container>
     </NavbarWrapper>
   );
@@ -69,9 +66,9 @@ export const NavLinks = (): JSX.Element => {
       <Button type="btLink" as="a" color="grey4" href={`#contact`}>
         Contact
       </Button>
-      <Button type="btLink" as="a" color="grey4" href={`#social-media`}>
+      {/* <Button type="btLink" as="a" color="grey4" href={`#social-media`}>
         Social Media
-      </Button>
+      </Button> */}
     </NavbarLinks>
   );
 };
