@@ -1,3 +1,4 @@
+import { AboutMe } from "@/components/AboutMe";
 import { NavBar } from "@/components/Navbar";
 import { Home } from "@/pages/home";
 import { GlobalStyle } from "@/styles/Global";
@@ -9,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <GlobalStyle>
       <NavBar />
       <Home />
-      {/* <Footer /> */}
+      <AboutMe />
     </GlobalStyle>
   </React.StrictMode>
 );
